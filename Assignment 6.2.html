@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Assignment 6.2</title>
+</head>
+<body>
+<button onclick="createArray();">Create an array</button><br><br>
+Enter an element to push:<input type="text" id="pushelement"/>
+<button onclick="push();">Push element</button><br><br>
+<button onclick="pop();">Pop element</button><br><br>
+<div id="mydiv"></div>
+</body>
+
+<script type="text/javascript">
+var arr;
+	function createArray(){											/*Creates an array*/
+	    arr = [1,2,3,4];
+	    document.getElementById("mydiv").innerHTML=arr;
+	}
+	 
+	function push()													/*Pushes an element into the array*/
+	{
+		if(!(document.getElementById("pushelement").value)){
+			alert("Enter a value to push");
+		}
+		else
+		{
+			if(!arr){
+				arr=[];
+			}
+			arr.push(document.getElementById("pushelement").value);
+			document.getElementById("mydiv").innerHTML=arr;
+		}
+	}		
+	function pop(){													/*Pops an element from the array*/
+		if(!arr){
+			alert("Array is empty. Cannot pop anything");
+		}
+		else {
+			var x=arr.pop();
+			document.getElementById("mydiv").innerHTML="Popped element is "+x+" and the array is "+arr;
+		}
+	}		
+
+</script>
+</html>
